@@ -1,14 +1,9 @@
-var vm = new Vue({
+var example = new Vue({
   el: '#example',
   data: {
-    message: 'Hello'
-  },
-  computed: {
-    
-  },
-  methods: {
-    reversedMessage: function () {
-      return this.message.split('').reverse().join('-')
-    }
+    items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+    ]
   }
 })

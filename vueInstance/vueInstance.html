@@ -9,11 +9,11 @@
 </head>
 <body>
 
-  <div id="example">
-    <p>origin: {{ message }}</p>
-    <p>reversed: {{ reversedMessage() }}</p>
-    <p></p>
-  </div>
+  <ul id="example">
+    <li v-for="item in items">
+      {{ item.message }}
+    </li>
+  </ul>
   
   <script src="./vueInstance.js"></script>
 </body>
