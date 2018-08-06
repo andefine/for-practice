@@ -1,7 +1,11 @@
-var data = { a: 1 }
-
 var vm = new Vue({
-  data: data
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {
+    reversedMessage: function () {
+      return this.message.split('').reverse().join('')
+    }
+  }
 })
-
-console.log(vm.a == data.a)
