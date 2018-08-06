@@ -10,9 +10,8 @@
 <body>
 
   <ul id="example">
-    <li v-for="item in items">
-      {{ item.message }}
-    </li>
+    <button v-on:click="counter += 1">Add 1</button>
+    <p>rua {{ counter }}</p>
   </ul>
   
   <script src="./vueInstance.js"></script>
