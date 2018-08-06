@@ -4,8 +4,11 @@ var vm = new Vue({
     message: 'Hello'
   },
   computed: {
+    
+  },
+  methods: {
     reversedMessage: function () {
-      return this.message.split('').reverse().join('')
+      return this.message.split('').reverse().join('-')
     }
   }
 })
