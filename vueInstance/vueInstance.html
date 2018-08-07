@@ -9,9 +9,16 @@
 </head>
 <body>
 
-  <ul id="example">
-    <blog-post v-for="post of posts" :key="post.id" :post="post"></blog-post>
-  </ul>
+  <div id="example">
+    <div :style="{ fontSize: postFontSize + 'em' }">
+      <blog-post
+        v-for="post of posts"
+        :key="post.id"
+        :post="post"
+        @enlarge-text="postFontSize += 0.1"
+      ></blog-post>
+    </div>
+  </div>
   
   <script src="./vueInstance.js"></script>
 </body>
