@@ -1,9 +1,14 @@
 Vue.component('blog-post', {
   props: ['post'],
+  methods: {
+    enlargeText: function () {
+      this.$emit('enlarge-text', 0.1)
+    }
+  },
   template: `
     <div class="blog-post">
       <h3>{{ post.title }}</h3>
-      <button v-on:click="$emit('enlarge-text', 0.1)">enlarge text</button>
+      <button v-on:click="enlargeText">enlarge text</button>
       <div v-html="post.content"></div>
     </div>
   `
@@ -18,5 +23,10 @@ new Vue({
       { id: 3, title: 'why vue is so fun' }
     ],
     postFontSize: 1
+  },
+  methods: {
+    onEnlargeText: function (enlargeAmount) {
+      this.postFontSize += enlargeAmount
+    }
   }
 })
