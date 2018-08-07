@@ -10,12 +10,9 @@
 <body>
 
   <div id="example">
-    <div :style="{ fontSize: postFontSize + 'em' }">
+    <div>
       <blog-post
-        v-for="post of posts"
-        :key="post.id"
-        :post="post"
-        v-on:enlarge-text="onEnlargeText"
+        v-model="searchText"
       ></blog-post>
     </div>
   </div>
