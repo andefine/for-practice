@@ -1,16 +1,8 @@
-Vue.component('blog-post', {
-  props: ['value'],
+Vue.component('alert-box', {
   template: `
-    <input
-      :value="value"
-      @input="$emit('input', $event.target.value)"
-    >
+    <div>
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
   `
-})
-
-new Vue({
-  el: '#example',
-  data: {
-    searchText: 'vue'
-  }
 })
