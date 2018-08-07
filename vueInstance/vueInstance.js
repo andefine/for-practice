@@ -3,7 +3,7 @@ Vue.component('blog-post', {
   template: `
     <div class="blog-post">
       <h3>{{ post.title }}</h3>
-      <button v-on:click="$emit('enlarge-text')">enlarge text</button>
+      <button v-on:click="$emit('enlarge-text', 0.1)">enlarge text</button>
       <div v-html="post.content"></div>
     </div>
   `

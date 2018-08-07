@@ -15,7 +15,7 @@
         v-for="post of posts"
         :key="post.id"
         :post="post"
-        @enlarge-text="postFontSize += 0.1"
+        @enlarge-text="postFontSize += $event"
       ></blog-post>
     </div>
   </div>
