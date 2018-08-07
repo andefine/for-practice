@@ -1,14 +1,12 @@
-var example = new Vue({
-  el: '#example',
-  data: {
-    name: 'Vue.js'
-  },
-  methods: {
-    greet: function (event) {
-      alert('hello' + this.name + '!')
-      if (event) {
-        alert(event.target.tagName)
-      }
+Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
     }
-  }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }}</button>'
+})
+
+new Vue({
+  el: '#example'
 })
