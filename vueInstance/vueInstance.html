@@ -10,8 +10,7 @@
 <body>
 
   <ul id="example">
-    <blog-post title="vue"></blog-post>
-    <blog-post title="react"></blog-post>
+    <blog-post v-for="post of posts" :key="post.id" :title="post.title"></blog-post>
   </ul>
   
   <script src="./vueInstance.js"></script>
