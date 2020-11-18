@@ -53,3 +53,34 @@ class StackBaseObject {
     return objString;
   }
 }
+
+const stack = new StackBaseObject();
+console.log(Object.getOwnPropertyNames(stack));
+console.log(Object.keys(stack));
+console.log(stack.items);
+
+const decimalToBinary = (decNumber: number, base: number = 2) => {
+  if (!(base >= 2 && base <= 36)) {
+    return '';
+  }
+
+  const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let number = decNumber;
+  let rem;
+
+  const stack = new StackBaseObject();
+  while (number > 0) {
+    rem = Math.floor(number % base);
+    stack.push(rem);
+    number = Math.floor(number / base);
+  }
+
+  let binStr = '';
+  while (!stack.isEmpty()) {
+    binStr = `${binStr}${digits[stack.pop()]}`;
+  }
+
+  return binStr;
+};
+
+console.log(decimalToBinary(100345, 8));
